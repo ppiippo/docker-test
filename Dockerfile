@@ -6,7 +6,8 @@ ENV REFRESHED_AT 28.12.2015-10:00
 RUN apt-get update -y && apt-get install -qqy wget
 RUN wget -qO- https://get.docker.com/ | sh
 
-RUN apt-get update -y && apt-get install python python-pip docker-compose
+RUN apt-get update -y && apt-get install -yqq python-pip
+RUN pip install docker-compose
 
 WORKDIR /root
 ENTRYPOINT ["/bin/bash"]
